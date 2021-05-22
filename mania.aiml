@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    //topic, słowa kluczowe, wyrażenie warunkowe, random, podział
+    <category>
+        <pattern>Cześć</pattern>
+        <template>Witaj, jestem Mania, Twój osobisty przewodnik po sklepie
+        Chusteczkomania! :)</template>
+    </category>
+    <category>
+        <pattern>Dzień dobry</pattern>
+        <template><srai>Cześć</srai></template>
+    </category>
+    <category>
+        <pattern>Witaj</pattern>
+        <template><srai>Cześć</srai></template>
+    </category>
+    <category>
+        <pattern>Dobry wieczór</pattern>
+        <template><srai>Cześć</srai></template>
+    </category>
+    <category>
+        <pattern>Hej</pattern>
+        <template><srai>Cześć</srai></template>
+    </category>
+    <category>
+        <pattern>Hejka</pattern>
+        <template><srai>Cześć</srai></template>
+    </category>
+    <category>
+        <pattern>*</pattern>
+        <template>Przepraszam, ale nie rozumiem :(</template>
+    </category>
+    <category>
+            <pattern>cena</pattern>
+            <template>Niestety, pracodawcy nie pozwalają mi rozmawiać o pieniądzach. Odwiedź nasz sklep!
+            </template>
+        </category>
+        <category>
+            <pattern>_ cena *</pattern>
+            <template><srai>cena</srai></template>
+        </category>
+        <category>
+            <pattern>_ cena</pattern>
+            <template><srai>cena</srai></template>
+        </category>
+        <category>
+            <pattern>cena_</pattern>
+            <template><srai>cena</srai></template>
+        </category>
+
+    
+
+    <category>
+        <pattern>sklep</pattern>
+        <template>Nasz sklep zajmuje się dostarczaniem niezliczonych rodzajów
+        chusteczek. Na pewno któryś z nich przyda się i Tobie!</template>
+    </category>
+    <category>
+        <pattern>_ sklep</pattern>
+        <template><srai>sklep</srai></template>
+    </category>
+    <category>
+        <pattern>sklep _</pattern>
+        <template><srai>sklep</srai></template>
+    </category>
+    <category>
+        <pattern>_ sklep *</pattern>
+        <template><srai>sklep</srai></template>
+    </category>
+    
+    <topic name="CELULOZOWE">
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <random>
+                    <li>Chusteczki SuperSheep są niezwykle delikatne.</li>
+                    <li>Występują też w wersji dla twardzieli - z szarego papieru.</li>
+                    <li>Wszystkie rodzaje po 10, 20, 100 i 300 sztuk w opakowaniu.</li>
+                </random>
+                 Chcesz wiedzieć wiecej?
+            </template>
+        </category>
+        <category>
+            <pattern>Dość</pattern>
+            <template><think><set name="topic">OFERTA</set></think>W porzadku, czy interesuje Cię inny przedmiot z naszej oferty?</template>
+        </category>
+        <category>
+            <pattern>Wystarczy</pattern>
+            <template><srai>Dość</srai></template>
+        </category>
+        <category>
+            <pattern>Nie</pattern>
+            <template><srai>Dość</srai></template>
+        </category>
+    </topic>
+    
+    <topic name="BAWEŁNIANE">
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <random>
+                    <li>We wzorach specjalnie dla mężczyzn jak i dla kobiet.</li>
+                    <li>Prać w temperaturze do 40 stopni.</li>
+                    <li>Większe rozmiary nadają się wspaniale do nakrycia głowy.</li>
+                </random>
+                 Chcesz wiedzieć wiecej?
+            </template>
+        </category>
+        <category>
+            <pattern>Dość</pattern>
+            <template><think><set name="topic">OFERTA</set></think>W porzadku, czy interesuje Cię inny przedmiot z naszej oferty?</template>
+        </category>
+        <category>
+            <pattern>Wystarczy</pattern>
+            <template><srai>Dość</srai></template>
+        </category>
+        <category>
+            <pattern>Nie</pattern>
+            <template><srai>Dość</srai></template>
+        </category>
+    </topic>
+    
+    <topic name="MICROFIBRA">
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <random>
+                    <li>Najlepsze do czyszczenia.</li>
+                    <li>Miękkie, nie niszczą powierzchni.</li>
+                </random>
+                 Chcesz wiedzieć wiecej?
+            </template>
+        </category>
+        <category>
+            <pattern>Dość</pattern>
+            <template><think><set name="topic">OFERTA</set></think>W porzadku, czy interesuje Cię inny przedmiot z naszej oferty?</template>
+        </category>
+        <category>
+            <pattern>Wystarczy</pattern>
+            <template><srai>Dość</srai></template>
+        </category>
+        <category>
+            <pattern>Nie</pattern>
+            <template><srai>Dość</srai></template>
+        </category>
+    </topic>
+    
+    <topic name="OFERTA">
+        <category>
+            <pattern>celulozowe</pattern>
+            <template><think><set name="topic">CELULOZOWE</set></think>Sprawdzą się na każdy katar! W wielu rozmiarach i w różnych ilościach!
+            Czy chcesz dowiedzieć się więcej o chusteczkach celulozowych?
+            </template>
+        </category>
+        <category>
+            <pattern>bawełniane</pattern>
+            <template><think><set name="topic">BAWEŁNIANE</set></think>Odpowiednie dla miłośników starego stylu
+            Czy chcesz dowiedzieć się więcej o chusteczkach bawełnianych?
+            </template>
+        </category>
+        <category>
+            <pattern>microfibra</pattern>
+            <template><think><set name="topic">MICROFIBRA</set></think>Idealnie miękkie i chłonne.
+            Czy chcesz dowiedzieć się więcej o chusteczkach z mikrofibry?
+            </template>
+        </category>
+        <category>
+            <pattern>*</pattern>
+            <template>
+                <random>
+                    <li><think><set name="topic">CELULOZOWE</set></think>Mamy chusteczki celulozowe! Chcesz wiedzieć o nich coś więcej?</li>
+                    <li><think><set name="topic">BAWEŁNIANE</set></think>Mamy chusteczki bawełniane! Chcesz wiedzieć o nich coś więcej?</li>
+                    <li><think><set name="topic">MICROFIBRA</set></think>Mamy chusteczki z microfibry! Chcesz wiedzieć o nich coś więcej?</li>
+                </random>
+            </template>
+        </category>
+        <category>
+            <pattern>do kieszeni</pattern>
+            <template>Jasne! <think><set name="topic">BAWEŁNIANE</set></think>Mamy chusteczki bawełniane! Chcesz wiedzieć o nich coś więcej?</template>
+        </category>
+        <category>
+            <pattern>na głowę</pattern>
+            <template>Jasne! <think><set name="topic">BAWEŁNIANE</set></think>Mamy chusteczki bawełniane! Chcesz wiedzieć o nich coś więcej?</template>
+        </category>
+        <category>
+            <pattern>na katar</pattern>
+            <template>Jasne! <think><set name="topic">CELULOZOWE</set></think>Mamy chusteczki celulozowe! Chcesz wiedzieć o nich coś więcej?</template>
+        </category>
+        <category>
+            <pattern>do czyszczenia</pattern>
+            <template>Jasne! <think><set name="topic">MICROFIBRA</set></think>Mamy chusteczki z microfibry! Chcesz wiedzieć o nich coś więcej?</template>
+        </category>
+        <category>
+            <pattern>do *</pattern>
+            <template>Niestety wydaje mi się że nie :(</template>
+        </category>
+        <category>
+            <pattern>na *</pattern>
+            <template>Niestety raczej nie :(</template>
+        </category>
+        <category>
+            <pattern>Czy macie coś co nada się *</pattern>
+            <template>Cóż... <srai><star/></srai></template>
+        </category>    
+        <category>
+            <pattern>Wystarczy</pattern>
+            <template><think><set name="topic">*</set></think>W porzadku, porozmawiajmy o czymś innym (na przykład- wysyłka)</template>
+        </category>
+        <category>
+            <pattern>Nie</pattern>
+            <template><srai>Wystarczy</srai></template>
+        </category>
+    </topic>
+    
+    
+    <category>
+    <pattern>Przedstaw mi waszą ofertę</pattern>
+    <template><think><set name="topic">OFERTA</set></think>Chętnie przedstawię Ci naszą ofertę! 
+    Mamy chusteczki celulozowe, bawełniane, z microfibry... O których chcesz się dowiedzieć?</template>
+    </category>
+    <category>
+        <pattern>_ oferta</pattern>
+        <template><srai>Przedstaw mi waszą ofertę</srai></template>
+    </category>
+    <category>
+        <pattern>oferta _</pattern>
+        <template><srai>Przedstaw mi waszą ofertę</srai></template>
+    </category>
+    <category>
+        <pattern>_ oferta *</pattern>
+        <template><srai>Przedstaw mi waszą ofertę</srai></template>
+    </category>
+    
+    
+    <topic name="WYSYŁKA">
+        <category>
+            <pattern>*</pattern>
+            <template>
+            <think><set name="var"><uppercase><star /></uppercase></set></think>
+            <condition>
+            <li name="var" value="TAK">
+            Do odważnych świat należy! Gratulacje - właśnie wygrałeś ten konkurs!
+            <think><set name="topic">*</set></think>
+            </li>
+            <li name="var" value="NIE">
+            Żałuj. Konkurs polegał na udzieleniu odpowiedzi "tak". :(
+            <think><set name="topic">*</set></think>
+            </li>
+            <li>
+                <random>
+                    <li>To nie taka trudna decyzja - tak czy nie?</li>
+                    <li>Decyduj się - tak czy nie?</li>
+                    <li>Szybciutko - tak czy nie?</li>
+                </random>
+                </li>
+            </condition>
+            </template>
+        </category>
+    </topic>
+    
+    <category>
+        <pattern>Wysyłka</pattern>
+        <template><think><set name="topic">WYSYŁKA</set></think>Czas wysyłki zależy od przewoźnika.
+        Inpost 1-2, Poczta Polska 2-5 dni roboczych.
+        Teraz ja zadam Ci pytanie - czy wziąłbyś udział w naszym konkursie jeśli 
+        do wygrania jest darmowa przesyłka?
+        </template>
+    </category>
+    <category>
+        <pattern>_ wysyłką</pattern>
+        <template><srai>Wysyłka</srai></template>
+    </category>
+    <category>
+        <pattern>wysyłka _</pattern>
+        <template><srai>Przedstaw mi waszą ofertę</srai></template>
+    </category>
+    <category>
+        <pattern>_ wysyłka *</pattern>
+        <template><srai>Przedstaw mi waszą ofertę</srai></template>
+    </category>
+    
+    <category>
+        <pattern>dzięki</pattern>
+        <template>Proszę bardzo, poleć nas znajomym ;)</template>
+    </category>
+    <category>
+        <pattern>dziękuję</pattern>
+        <template><srai>dzięki</srai></template>
+    </category>
+    
+
+    <category>
+        <pattern>Do widzenia</pattern>
+        <template><random>
+           <li> Do widzenia, mam nadzieję że jeszcze porozmawiamy! </li>
+           <li> Do zobaczenia! Miłego dnia! :)</li>
+           <li> Miło było Cię poznać! Odwiedź nas jeszcze! </li>
+           <li> Do widzenia! Zapraszam ponownie! </li>
+        </random></template>
+    </category>
+    <category>
+        <pattern>Pa</pattern>
+        <template><srai>Do widzenia</srai></template>
+    </category>
+    <category>
+        <pattern>Narazie</pattern>
+        <template><srai>Do widzenia</srai></template>
+    </category>
+    <category>
+        <pattern>Dobranoc</pattern>
+        <template><srai>Do widzenia</srai></template>
+    </category>
+</aiml>
